@@ -1,0 +1,22 @@
+.borderBottom {
+    border-bottom: 1px solid #fff;
+}
+.tableHead{
+    padding: 10px;
+    font-size:20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+    background-color: #5d58e0;
+}
+
+.tableCol{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 8px;
+}
+.view{
+text-decoration: underline;
+color: #ffd534;
+}
