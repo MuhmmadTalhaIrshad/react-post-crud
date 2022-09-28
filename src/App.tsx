@@ -1,62 +1,34 @@
-import { Redirect, Route, Switch } from "react-router-dom";
-import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
-import AllPosts from "./pages/Allposts";
-import PostDetail from "./pages/PostDetails";
-import CreatePost from "./pages/CreatePosts";
+import { Redirect, Route, Switch } from 'react-router-dom';
+import AllPosts from './pages/Allposts';
+import PostDetail from './pages/PostDetails';
+import CreatePost from './pages/CreatePosts';
 
-/* Core CSS required for Ionic components to work properly */
-import "@ionic/react/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
-import "@ionic/react/css/normalize.css";
-import "@ionic/react/css/structure.css";
-import "@ionic/react/css/typography.css";
-
-/* Optional CSS utils that can be commented out */
-import "@ionic/react/css/padding.css";
-import "@ionic/react/css/float-elements.css";
-import "@ionic/react/css/text-alignment.css";
-import "@ionic/react/css/text-transformation.css";
-import "@ionic/react/css/flex-utils.css";
-import "@ionic/react/css/display.css";
-
-/* Theme variables */
-import "./theme/variables.css";
-import Layout from "./components/layouts/Layout";
-import NotFound from "./pages/NotFound";
-
-setupIonicReact();
+import Layout from './components/layouts/Layout';
+import NotFound from './pages/NotFound';
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Layout>
-          <Switch>
-            <Route exact path="/">
-              <Redirect to="/posts" />
-            </Route>
-            {/* All Posts Route */}
-            <Route exact path="/posts">
-              <AllPosts />
-            </Route>
-            {/* Sinle Post */}
-            <Route path="/posts/:postId">
-              <PostDetail />
-            </Route>
-            {/* Create a new Post */}
-            <Route path="/new-post">
-              <CreatePost />
-            </Route>
-            <Route path="*">
-              <NotFound/>
-            </Route>
-          </Switch>
-        </Layout>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+	<Layout>
+		<Switch>
+			<Route exact path='/'>
+				<Redirect to='/posts' />
+			</Route>
+			{/* All Posts Route */}
+			<Route exact path='/posts'>
+				<AllPosts />
+			</Route>
+			{/* Sinle Post */}
+			<Route path='/posts/:postId'>
+				<PostDetail />
+			</Route>
+			{/* Create a new Post */}
+			<Route path='/new-post'>
+				<CreatePost />
+			</Route>
+			<Route path='*'>
+				<NotFound />
+			</Route>
+		</Switch>
+	</Layout>
 );
 
 export default App;

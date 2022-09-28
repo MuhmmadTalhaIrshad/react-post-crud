@@ -18,10 +18,18 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-} from "@ionic/react";
+} from '@ionic/react';
 import { pin, wifi, wine, warning, walk } from "ionicons/icons";
 
-export const Post = (props) => {
+type PostComponentProps = {
+  title: string
+  author: string
+  description: string
+  image: string
+  opional?: string
+}
+
+export const Post: React.FC<PostComponentProps> = (props: PostComponentProps) => {
   return (
     <IonCard>
       <IonGrid>
